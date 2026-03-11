@@ -477,3 +477,63 @@ O aplicativo meta possui:
 - Webhook Verify Token (token para vinculo da aplicação provedora com a meta)
 - URL do webhook (url do aplicativo web da empresa provedora, usado para checar se o webhook é valido, para a meta enviar eventos e se a aplicação está funcionando)
 - 
+
+------------------------------------------------------------------------------------
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "102290129340398",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "15550783881",
+              "phone_number_id": "106540352242922"
+            },
+            "contacts": [
+              {
+                "profile": {
+                  "name": "Sheena Nelson"
+                },
+                "wa_id": "16505551234"
+              }
+            ],
+            "messages": [
+              {
+                "from": "16505551234",
+                "id": "wamid.HBgLMTY1MDM4Nzk0MzkVAgASGBQzQTRBNjU5OUFFRTAzODEwMTQ0RgA=",
+                "timestamp": "1749416383",
+                "type": "text",
+                "text": {
+                  "body": "Does it come in another color?"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+Esse é o "bilhete" (JSON) que a Meta envia para o seu servidor toda vez que alguém fala com o seu chatbot. Imagine que é um formulário de entrega com os seguintes campos:
+1. Quem recebeu a mensagem (Sua empresa/Cliente)
+id (o primeiro): É o ID da conta comercial (WABA) do seu cliente.
+display_phone_number: O número de telefone que as pessoas veem no WhatsApp.
+phone_number_id: Este é o RG do número. Você usará esse ID no seu código para dizer à Meta: "responda através deste número aqui".
+2. Quem enviou a mensagem (O usuário final)
+name ("Sheena Nelson"): O nome que a pessoa configurou no perfil do WhatsApp dela.
+wa_id / from: O número de telefone da pessoa que mandou a mensagem (quem está falando com o robô).
+3. Detalhes da conversa
+id (dentro de messages): É o código único daquela mensagem específica. Serve para você não processar a mesma mensagem duas vezes ou para marcar como lida.
+timestamp: O horário exato em que a mensagem foi enviada (em formato de segundos).
+type ("text"): Diz que o que chegou foi um texto. Se fosse uma foto, aqui estaria "image".
+body: O conteúdo da mensagem. É aqui que o seu robô lê o que a pessoa escreveu ("Isso vem em outra cor?").
+Resumo para o seu banco de dados:
+Ao receber esse objeto, seu sistema deve olhar para o phone_number_id para saber de qual cliente é aquela mensagem e para o from para saber com qual usuário o robô deve conversar.
