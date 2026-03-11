@@ -465,3 +465,14 @@ Dica de ouro: Use ferramentas como o Webhook.site ou ngrok para expor seu servid
 Você já tem um servidor (Node, Python, PHP, etc.) rodando para receber esses dados ou quer uma recomendação de como subir um ambiente de teste?
 
 
+------------------------------------------------------------------------------------
+
+Arquitetura definida:
+
+A empresa provedora de tecnologia possui um aplicativo Meta;
+O aplicativo meta possui:
+- App Id ()
+- App Secret ()
+- Webhook Verify Token (token para vinculo da aplicação provedora com a meta)
+- URL do webhook (url do aplicativo web da empresa provedora, usado para checar se o webhook é valido, para a meta enviar eventos e se a aplicação está funcionando)
+- 
