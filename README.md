@@ -6,9 +6,9 @@ O objetivo é centralizar conhecimento sobre autenticação, webhooks, seguranç
 
 ## 📖 Links e referencias:
 
-Playground WhatsApp Flows: https://developers.facebook.com/docs/whatsapp/flows/playground?nav_ref=biz_unified_f3_login_page_to_dfc
-Introdução a webhooks: https://developers.facebook.com/docs/graph-api/webhooks/getting-started/#configure-webhooks-product
-Como gerar um token de acesso: https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#system-user-access-tokens
+Playground WhatsApp Flows: https://developers.facebook.com/docs/whatsapp/flows/playground?nav_ref=biz_unified_f3_login_page_to_dfc <br>
+Introdução a webhooks: https://developers.facebook.com/docs/graph-api/webhooks/getting-started/#configure-webhooks-product <br>
+Como gerar um token de acesso: https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#system-user-access-tokens <br>
 
 ---
 
