@@ -10,6 +10,7 @@ Playground WhatsApp Flows: https://developers.facebook.com/docs/whatsapp/flows/p
 Introdução a webhooks: https://developers.facebook.com/docs/graph-api/webhooks/getting-started/#configure-webhooks-product <br>
 Como gerar um token de acesso: https://developers.facebook.com/documentation/business-messaging/whatsapp/access-tokens#system-user-access-tokens <br>
 Referencias de sintaxe de modelos de mensagem: https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages/text <br>
+Conversa GPT: https://chatgpt.com/share/69b3148d-4228-800b-96b8-f4321264d08d
 
 ---
 
