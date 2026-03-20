@@ -539,3 +539,78 @@ type ("text"): Diz que o que chegou foi um texto. Se fosse uma foto, aqui estari
 body: O conteúdo da mensagem. É aqui que o seu robô lê o que a pessoa escreveu ("Isso vem em outra cor?").
 Resumo para o seu banco de dados:
 Ao receber esse objeto, seu sistema deve olhar para o phone_number_id para saber de qual cliente é aquela mensagem e para o from para saber com qual usuário o robô deve conversar.
+
+
+-----------------------------------------------------------------------------------
+
+Para enviar botões de múltipla escolha (Reply Buttons) via WhatsApp Business API, você deve enviar um POST request para o endpoint de mensagens da Meta (GRAPH API) usando o formato JSON de Mensagens Interativas. 
+Meta for Developers
+Meta for Developers
+Dentro de uma janela de 24 horas de conversação iniciada pelo usuário, você pode usar este formato sem necessidade de aprovação prévia de template. 
+Infobip
+Infobip
+Formato JSON para Botões de Resposta (Reply Buttons)
+O tipo (type) da mensagem deve ser interactive e o sub-tipo deve ser button. Você pode adicionar até 3 botões. 
+Insider Academy
+Insider Academy
+ +1
+json
+{
+  "messaging_product": "whatsapp",
+  
+  "recipient_type": "individual",
+  "to": "NUMERO_DO_USUARIO",
+  "type": "interactive",
+  "interactive": {
+  
+    "type": "button",
+
+
+
+
+
+
+    
+    "body": {
+      "text": "Olá! Escolha uma das opções abaixo para continuarmos:"
+    },
+    "action": {
+      "buttons": [
+        {
+          "type": "reply",
+          "reply": {
+            "id": "opcao_1",
+            "title": "Opção Um"
+          }
+        },
+        {
+          "type": "reply",
+          "reply": {
+            "id": "opcao_2",
+            "title": "Opção Dois"
+          }
+        },
+        {
+          "type": "reply",
+          "reply": {
+            "id": "opcao_3",
+            "title": "Opção Três"
+          }
+        }
+      ]
+    }
+  }
+}
+Regras Obrigatórias do JSON
+Body Text: A mensagem principal (texto) tem limite de 1024 caracteres.
+Quantidade de Botões: Mínimo de 1 e máximo de 3 botões.
+Título do Botão: O texto do botão (title) pode ter no máximo 20 caracteres.
+ID do Botão: O id é obrigatório, único, e deve ter no máximo 256 caracteres. É esse ID que você receberá de volta no webhook quando o usuário clicar.
+Cabeçalho (Opcional): Você pode adicionar um cabeçalho de texto ou mídia (imagem/documento) antes do corpo, com no máximo 20 caracteres. 
+Insider Academy
+Insider Academy
+ +2
+O que acontece depois (Webhook)
+Quando o usuário clica em um botão, a Meta envia um POST para o seu webhook com o id que você configurou no JSON acima, facilitando o rastreamento da resposta. 
+Meta for Developers
+Meta for Developers
