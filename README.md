@@ -12,6 +12,8 @@ Como gerar um token de acesso: https://developers.facebook.com/documentation/bus
 Referencias de sintaxe de modelos de mensagem: https://developers.facebook.com/documentation/business-messaging/whatsapp/webhooks/reference/messages/text <br>
 Whatsapp Flows: https://developers.facebook.com/docs/whatsapp/flows
 Conversa GPT: https://chatgpt.com/share/69b3148d-4228-800b-96b8-f4321264d08d
+Envio de midia pelo S3 no whatsapp: https://docs.aws.amazon.com/pt_br/social-messaging/latest/userguide/send-message-media.html
+Carregando arquivos de midia S3: https://docs.aws.amazon.com/pt_br/social-messaging/latest/userguide/managing-media-files-s3.html
 
 ---
 
